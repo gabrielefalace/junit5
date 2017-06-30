@@ -1,7 +1,22 @@
-package com.falace.basic;
 
-/**
- * Created by gfalace on 22.06.17.
- */
-public class Calculator {
-}
+
+
+        package com.falace.basic;
+
+
+        class Calculator {
+
+            int add(int a, int b) {
+                return a+b;
+            }
+
+        }
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,21 @@
-package com.falace.basic;
 
-/**
- * Created by gfalace on 23.06.17.
- */
-public class UserService {
-}
+
+
+
+
+
+            package com.falace.basic;
+
+
+            public class UserService {
+
+                void activate(User user){
+                    user.setActive(true);
+                }
+
+            }
+
+
+
+
+

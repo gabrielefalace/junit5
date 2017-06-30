@@ -1,14 +1,26 @@
-package com.falace.basic;
 
 
 
-public class Formatter {
 
-    User format(User user){
-        User formatted = new User();
-        formatted.setTelephone(user.getTelephone());
+                    package com.falace.basic;
 
-        String formattedFirstName = 
-    }
 
-}
+
+                    class Formatter {
+
+                        User format(User user){
+                            User formattedUser = new User();
+                            formattedUser.setTelephone(user.getTelephone());
+
+                            formattedUser.setEmail(user.getEmail().toLowerCase());
+                            formattedUser.setFirstName(user.getFirstName().toLowerCase());
+                            formattedUser.setLastName(user.getLastName().toLowerCase());
+
+                            return formattedUser;
+                        }
+
+                    }
+
+
+
+

@@ -5,6 +5,18 @@
     <groupId>com.falace</groupId>
     <artifactId>junit5</artifactId>
     <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>1.0.0-M4</version>
+        </dependency>
+    </dependencies>
     <packaging>pom</packaging>
 
     <modules>
@@ -12,7 +24,7 @@
         <module>dynamic</module>
         <module>nested</module>
         <module>extension</module>
-        <module>theories</module>
+        <module>parameterized</module>
     </modules>
 
 </project>

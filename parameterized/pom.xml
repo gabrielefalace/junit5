@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.falace</groupId>
-    <artifactId>nested</artifactId>
+    <artifactId>parameterized</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
@@ -41,6 +41,13 @@
             <groupId>org.opentest4j</groupId>
             <artifactId>opentest4j</artifactId>
             <version>1.0.0-M1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.0.0-M4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
