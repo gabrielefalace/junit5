@@ -9,10 +9,7 @@ public class Student {
     private int englishGrade;
     private int historyGrade;
 
-    public Student() {
-    }
-
-    public Student(String firstName, String lastName, int mathGrade, int englishGrade, int historyGrade) {
+    Student(String firstName, String lastName, int mathGrade, int englishGrade, int historyGrade) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mathGrade = mathGrade;
