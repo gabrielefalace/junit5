@@ -14,7 +14,7 @@ package com.falace.parameterized;
         class TeacherTestCsv {
 
             private Teacher teacher = new Teacher();
-            
+
             @ParameterizedTest
             @CsvFileSource(resources = {"/good_students.csv"})
             void testGoodStudents(String firstName, String lastName, int math, int english, int history) {
