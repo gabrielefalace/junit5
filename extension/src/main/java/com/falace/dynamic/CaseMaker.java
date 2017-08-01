@@ -1,4 +1,4 @@
-package com.falace.extension;
+package com.falace.dynamic;
 
 import java.util.List;
 import static java.util.Arrays.asList;

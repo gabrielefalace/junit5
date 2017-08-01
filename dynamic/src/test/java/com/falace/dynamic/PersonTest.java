@@ -1,4 +1,4 @@
-package com.falace.extension;
+package com.falace.dynamic;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;
@@ -6,13 +6,9 @@ import org.junit.jupiter.api.TestFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.*;
-import static java.util.Arrays.asList;
-import static java.util.stream.Collectors.*;
+import static java.util.Arrays.stream;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 class PersonTest {
@@ -41,7 +37,7 @@ class PersonTest {
                 }));
     }
 
-    private String capitalize(String word){
+    private String capitalize(String word) {
         String firstCharUppercase = String.valueOf(word.charAt(0)).toUpperCase();
         return firstCharUppercase + word.substring(1);
     }
@@ -50,7 +46,7 @@ class PersonTest {
         return stream(clazz.getMethods())
                 .filter(method -> method.getReturnType().equals(String.class))
                 .map(Method::getName)
-                .anyMatch(name -> name.equals("get"+fieldName));
+                .anyMatch(name -> name.equals("get" + fieldName));
     }
 
 }

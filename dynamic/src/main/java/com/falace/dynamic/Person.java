@@ -1,4 +1,4 @@
-package com.falace.extension;
+package com.falace.dynamic;
 
 
 public class Person {
