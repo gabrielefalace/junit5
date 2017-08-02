@@ -1,53 +1,53 @@
 
 
 
-                package com.falace.basic;
+package com.falace.basic;
 
 
-                import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.*;
 
-                @Tag("validation")
-                class ValidatorTest {
-
-
-                    private Validator validator;
+@Tag("validation")
+class ValidatorTest {
 
 
-                    @BeforeAll
-                    void setup(){
-                        validator = new Validator();
-                        validator.setTelephoneRequired(true);
-                    }
+    private Validator validator;
 
-                    @Test
-                    @DisplayName("Validation succeeds when no field is blank")
-                    void testValidateSuccess() {
-                        User user = new User();
-                        user.setFirstName("John");
-                        user.setLastName("Doe");
-                        user.setEmail("joe.doe@mail.com");
-                        user.setTelephone("+3912345678910");
 
-                        boolean isValid = validator.validate(user);
+    @BeforeAll
+    void setup() {
+        validator = new Validator();
+        validator.setTelephoneRequired(true);
+    }
 
-                        Assertions.assertTrue(isValid);
-                    }
+    @Test
+    @DisplayName("Validation succeeds when no field is blank")
+    void testValidateSuccess() {
+        User user = new User();
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        user.setEmail("joe.doe@mail.com");
+        user.setTelephone("+3912345678910");
 
-                    @Test
-                    @DisplayName("Validation fails when telephone number is blank")
-                    void testValidateFailure() {
-                        User user = new User();
-                        user.setFirstName("John");
-                        user.setLastName("Doe");
-                        user.setEmail("joe.doe@mail.com");
-                        user.setTelephone("");
+        boolean isValid = validator.validate(user);
 
-                        boolean isValid = validator.validate(user);
+        Assertions.assertTrue(isValid);
+    }
 
-                        Assertions.assertFalse(isValid);
-                    }
+    @Test
+    @DisplayName("Validation fails when telephone number is blank")
+    void testValidateFailure() {
+        User user = new User();
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        user.setEmail("joe.doe@mail.com");
+        user.setTelephone("");
 
-                }
+        boolean isValid = validator.validate(user);
+
+        Assertions.assertFalse(isValid);
+    }
+
+}
 
 
 

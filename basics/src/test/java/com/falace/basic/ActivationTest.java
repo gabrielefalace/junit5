@@ -1,32 +1,29 @@
+package com.falace.basic;
 
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.RepeatedTest;
 
-                            package com.falace.basic;
+class ActivationTest {
 
+    private static UserService userService;
 
-                            import org.junit.jupiter.api.Assertions;
-                            import org.junit.jupiter.api.BeforeAll;
-                            import org.junit.jupiter.api.RepeatedTest;
+    private static User user;
 
-                            class ActivationTest {
+    @BeforeAll
+    static void init() {
+        userService = new UserService();
+        user = new User();
+    }
 
-                                private static UserService userService;
+    @RepeatedTest(8)
+    void activateUser() {
+        userService.activate(user);
+        Assertions.assertTrue(user.isActive());
+    }
 
-                                private static User user;
-
-                                @BeforeAll
-                                static void init() {
-                                    userService = new UserService();
-                                    user = new User();
-                                }
-
-                                @RepeatedTest(8)
-                                void activateUser() {
-                                    userService.activate(user);
-                                    Assertions.assertTrue(user.isActive());
-                                }
-
-                            }
+}
 
 
 
