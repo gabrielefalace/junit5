@@ -11,6 +11,7 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
 
     private static final ExtensionContext.Namespace BENCHMARK_NAMESPACE = ExtensionContext.Namespace.create("com", "falace", "BenchmarkExtension");
 
+    // here the context refers to the Class
     @Override
     public void beforeAll(ExtensionContext context) {
         if (!isAnnotatedForBenchmark(context))
@@ -18,6 +19,7 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         saveNowAsStartTime(context, StartTimeKey.WHOLE_TEST_CLASS);
     }
 
+    // here the context refers to the Method
     @Override
     public void beforeTestExecution(ExtensionContext context) {
         if (!isAnnotatedForBenchmark(context))
@@ -25,6 +27,7 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         saveNowAsStartTime(context, StartTimeKey.SINGLE_TEST);
     }
 
+    // here the context refers to the Method
     @Override
     public void afterTestExecution(ExtensionContext context) {
         if (!isAnnotatedForBenchmark(context))
@@ -34,6 +37,7 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         report("Test", context, duration);
     }
 
+    // here the context refers to the Class
     @Override
     public void afterAll(ExtensionContext context){
         if(!isAnnotatedForBenchmark(context))
@@ -43,7 +47,7 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         report("Test container", context, duration);
     }
 
-    // Private helper methods
+    // private helper methods
 
     private boolean isAnnotatedForBenchmark(ExtensionContext context) {
         return context.getElement().map(element -> isAnnotated(element, Benchmark.class)).orElse(false);
