@@ -1,8 +1,4 @@
-
-
-
 package com.falace.basic;
-
 
 import org.junit.jupiter.api.*;
 
@@ -13,7 +9,7 @@ class ValidatorTest {
     private Validator validator;
 
 
-    @BeforeAll
+    @BeforeEach
     void setup() {
         validator = new Validator();
         validator.setTelephoneRequired(true);
