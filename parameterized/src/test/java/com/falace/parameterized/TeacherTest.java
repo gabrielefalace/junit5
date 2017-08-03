@@ -13,7 +13,7 @@ class TeacherTest {
     private Teacher teacher = new Teacher();
 
     @ParameterizedTest
-    @MethodSource(names = {"provideGoodStudents"})
+    @MethodSource("provideGoodStudents")
     @DisplayName("Good Students")
     void test(Student arg) {
         boolean admitted = teacher.admitToNextClass(arg);
