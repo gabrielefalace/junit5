@@ -1,4 +1,4 @@
-package com.falace.extension;
+package com.falace.extension.benchmark;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +16,7 @@ class SampleTest {
 
 
     @Test
+    @Benchmark
     void test2(){
         assertFalse(false);
     }

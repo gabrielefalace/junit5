@@ -1,4 +1,4 @@
-package com.falace.extension;
+package com.falace.extension.benchmark;
 
 
 import org.junit.jupiter.api.extension.ExtendWith;
