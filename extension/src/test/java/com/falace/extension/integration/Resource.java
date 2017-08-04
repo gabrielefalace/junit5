@@ -3,36 +3,36 @@ package com.falace.extension.integration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Resource {
+class Resource {
 
     List<String> buffer;
 
 
-    public void open(){
+    void open() {
         buffer = new ArrayList<>();
     }
 
-    public void close(){
+    void close() {
         buffer = null;
     }
 
-    public void write(String value){
+    void write(String value) {
         buffer.add(value);
     }
 
-    public int size(){
+    int size() {
         return buffer.size();
     }
 
-    public void clear(){
+    void clear() {
         buffer.clear();
     }
 
-    public boolean isClear(){
+    boolean isClear() {
         return buffer.isEmpty();
     }
 
-    public boolean isOpen(){
+    boolean isOpen() {
         return buffer != null;
     }
 }
