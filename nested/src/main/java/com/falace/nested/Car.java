@@ -4,23 +4,23 @@ public class Car {
 
     private FuelSource fuelSource = FuelSource.GAS;
 
-    private int engineSize = 1000;
+    private int horsepower = 1000;
 
     Car(FuelSource source){
         this.fuelSource = source;
     }
 
-    Car(FuelSource source, int engineSize){
+    Car(FuelSource source, int horsepower){
         this.fuelSource = source;
-        this.engineSize = engineSize;
+        this.horsepower = horsepower;
     }
 
-    int getEngineSize() {
-        return engineSize;
+    int getHorsepower() {
+        return horsepower;
     }
 
-    public void setEngineSize(int engineSize) {
-        this.engineSize = engineSize;
+    public void setHorsepower(int horsepower) {
+        this.horsepower = horsepower;
     }
 
     FuelSource getFuelSource() {

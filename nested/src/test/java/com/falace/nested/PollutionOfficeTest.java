@@ -16,12 +16,23 @@ class PollutionOfficeTest {
 
         Car electricCar = new Car(FuelSource.ELECTRIC);
 
+
         @Test
         @DisplayName("Electric car always get a GREEN badge")
-        void testElectric() {
+        void testSmallElectric() {
+            electricCar.setHorsepower(65);
             Badge badge = office.assignBadge(electricCar);
             Assertions.assertEquals(Badge.GREEN, badge);
         }
+
+        @Test
+        @DisplayName("Electric car always get a GREEN badge")
+        void testBigElectric() {
+            electricCar.setHorsepower(250);
+            Badge badge = office.assignBadge(electricCar);
+            Assertions.assertEquals(Badge.GREEN, badge);
+        }
+
     }
 
     @Nested
@@ -32,7 +43,7 @@ class PollutionOfficeTest {
         @Test
         @DisplayName("Small gas fueled cars get a GREEN badge")
         void testSmallGasCar() {
-            gasCar.setEngineSize(1000);
+            gasCar.setHorsepower(65);
             Badge badge = office.assignBadge(gasCar);
             Assertions.assertEquals(Badge.GREEN, badge);
         }
@@ -40,7 +51,7 @@ class PollutionOfficeTest {
         @Test
         @DisplayName("Big gas fueled cars get a RED badge")
         void testBigGasCar() {
-            gasCar.setEngineSize(5000);
+            gasCar.setHorsepower(250);
             Badge badge = office.assignBadge(gasCar);
             Assertions.assertEquals(Badge.RED, badge);
         }

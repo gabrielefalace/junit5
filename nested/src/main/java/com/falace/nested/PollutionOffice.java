@@ -9,7 +9,7 @@ class PollutionOffice {
                 return Badge.GREEN;
             case GAS:
             default:
-                return car.getEngineSize()>4000? Badge.RED : Badge.GREEN;
+                return car.getHorsepower()>120? Badge.RED : Badge.GREEN;
         }
     }
 

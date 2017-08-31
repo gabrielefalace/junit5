@@ -10,7 +10,7 @@ import static java.util.stream.Collectors.toList;
 public class IntegrationTestExtension implements TestInstancePostProcessor, BeforeTestExecutionCallback, AfterTestExecutionCallback, AfterAllCallback {
 
     private static final ExtensionContext.Namespace INTEGRATION_TEST_NAMESPACE = ExtensionContext.Namespace.create("com", "falace", "IntegrationTestExtension");
-    public static final String RESOURCE = "resource";
+    private static final String RESOURCE = "resource";
 
     // here the context refers to the Method
     @Override

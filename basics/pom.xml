@@ -9,7 +9,8 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.0.0-RC2</version>
+            <version>5.0.0-RC3</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <packaging>jar</packaging>
